@@ -1,5 +1,6 @@
+from lib2to3.pgen2 import token
 import discord
-import os
+import Token
 import random
 
 client = discord.Client()
@@ -30,4 +31,4 @@ async def on_message(message):
       await message.channel.send("This is ARA guid commands:\n\t$hello => bot say hello to you\n\tif you use bad words bot reactioned to your message")
 
 
-client.run(os.env['key'])
+client.run(Token.Token())
