@@ -26,6 +26,8 @@ async def on_message(message):
 
     if any(word in msg for word in bad_words):
         await message.channel.send(random.choice(against_bw))
+    if msg.startswith("$help"):
+      await message.channel.send("This is ARA guid commands:\n\t$hello => bot say hello to you\n\tif you use bad words bot reactioned to your message")
 
 
-client.run(os.environ['key'])
+client.run(os.env['key'])
