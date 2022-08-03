@@ -4,7 +4,8 @@ import Token
 import random
 
 client = discord.Client()
-bad_words = ['kir', 'kos', 'kon', 'fuck']
+bad_words = ['kir', 'kos', 'kon', 'fuck', 'suck', 'pussy', 'dick', 'bitch']
+good_words = ['afarin', 'ahsant', 'barikala', 'mashala', 'bos', 'damet garm', 'ghorbonet', 'nokaretam', 'mokhlesam' ]
 against_bw = ['bi adab nabashim', 'kore khar fosh nade', 'dahaneto ab bemal', 'bia bokhoresh', 'na omid shodam azat -_-']
 
 
@@ -26,5 +27,10 @@ async def on_message(message):
 
     if msg.startswith("$help"):
       await message.channel.send("This is ARA guid commands:\n\t$hello => bot say hello to you\n\tif you use bad words bot reactioned to your message")
+
+    if any(word in msg for word in good_words):
+        await message.channel.send("Bos be ali Golshahi")
+
+
 
 client.run(Token.Token())
