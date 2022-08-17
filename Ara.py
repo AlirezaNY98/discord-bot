@@ -3,18 +3,23 @@ import discord
 import Token
 import urllib.request
 import json
-import random
 
 client = discord.Client()
 good_words = ['afarin', 'ahsant', 'barikala', 'mashala', 'bos', 'damet garm', 'ghorbonet', 'nokaretam', 'mokhlesam' ]
 
 
 def meme():
-    web_url = urllib.request.urlopen("https://api.codebazan.ir/jok/json/")
-    data = web_url.read()
-    meme_JSon = json.loads(data)
+    meme_url = urllib.request.urlopen("https://api.codebazan.ir/jok/json/")
+
+    meme_data = meme_url.read()
+    meme_JSon = json.loads(meme_data)
     return meme_JSon["result"]["jok"]
-    
+
+def quote():
+    quote_url = urllib.request.urlopen("http://api.codebazan.ir/hadis/")
+
+    quote_data = quote_url.read()
+    return quote_data.decode()
 
 @client.event
 async def on_ready():
@@ -36,6 +41,7 @@ async def on_message(message):
     if msg.startswith("$meme"):
         await message.channel.send(meme())
 
-
+    if msg.startswith("$quote"):
+        await message.channel.send(quote())
 
 client.run(Token.Token())
