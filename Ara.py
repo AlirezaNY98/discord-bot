@@ -32,16 +32,16 @@ async def on_message(message):
 
     msg = message.content
     if msg.startswith("$help"):
-      await message.channel.send("This is ARA guid commands:\n\t$hello => bot say hello to you\n\t \
-        $meme => send joke in channel")
+      await message.channel.send("This is ARA guid commands:\n\n\t$hello => bot say hello to you\n\n\t \
+        $meme => send joke in channel\n\n\t$quote => send a quote for you")
 
     if any(word in msg for word in good_words):
         await message.channel.send("nice...")
 
     if msg.startswith("$meme"):
-        await message.channel.send(meme())
+        await message.channel.send(f"meme:\n{meme()}")
 
     if msg.startswith("$quote"):
-        await message.channel.send(quote())
+        await message.channel.send(f"quote:\n{quote()}")
 
 client.run(Token.Token())
