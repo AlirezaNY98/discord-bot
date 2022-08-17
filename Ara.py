@@ -4,7 +4,6 @@ import Token
 import random
 
 client = discord.Client()
-bad_words = ['kir', 'kos', 'kon', 'fuck', 'suck', 'pussy', 'dick', 'bitch']
 good_words = ['afarin', 'ahsant', 'barikala', 'mashala', 'bos', 'damet garm', 'ghorbonet', 'nokaretam', 'mokhlesam' ]
 against_bw = ['bi adab nabashim', 'kore khar fosh nade', 'dahaneto ab bemal', 'bia bokhoresh', 'na omid shodam azat -_-']
 
