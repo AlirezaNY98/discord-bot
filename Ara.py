@@ -41,6 +41,9 @@ async def on_message(message):
     if msg.startswith("$meme"):
         await message.channel.send(meme())
 
+    if msg.startswith("$delete 5"):
+        await message.channel.purge(limit = 5)
+
     if msg.startswith("$quote"):
         await message.channel.send(quote())
 
